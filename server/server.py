@@ -10,4 +10,4 @@ def return_home():
 
 
 if __name__ == "__main__":
-    app.run(port=8080, debug=True)
+    app.run(port=5328, debug=True)
