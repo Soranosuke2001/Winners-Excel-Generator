@@ -1,1 +1,32 @@
+# Server files
 /server/my_env
+
+# Client files
+/client/node_modules
+/client/.pnp
+/client/.pnp.js
+/client/.yarn/install-state.gz
+
+/client/coverage
+
+/client/.next/
+/client/out/
+
+/client/build
+
+/client/.DS_Store
+/client/*.pem
+
+/client/npm-debug.log*
+/client/yarn-debug.log*
+/client/yarn-error.log*
+
+# local env files
+/client/.env*.local
+
+# vercel
+/client/.vercel
+
+# typescript
+/client/*.tsbuildinfo
+/client/next-env.d.ts
