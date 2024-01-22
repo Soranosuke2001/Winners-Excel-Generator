@@ -17,7 +17,8 @@ def submit_data():
         print(data)
 
         return jsonify({
-            "message": "Successfully received you data"
+            "message": "Successfully received you data",
+            "ok": True
         }), 200
     
     except Exception as e:

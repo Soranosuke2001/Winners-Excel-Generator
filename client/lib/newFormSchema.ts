@@ -1,11 +1,9 @@
 import { z } from "zod";
 
-export const customTimeFormat = z.string().refine((value) => {
-  // Use a regular expression to check if the input matches the "00:00" format
-  const timeRegex = /^(?:[01]\d|2[0-3]):[0-5]\d$/;
-  return timeRegex.test(value);
-}, {
-  message: 'Invalid time format. Please use the "00:00" format.',
+const timeRegex = /^([01]?[0-9]|2[0-3]):[0-5][0-9]$/;
+
+const customTimeFormat = z.string().regex(timeRegex, {
+  message: "Invalid time format. Expected format: hh:mm",
 });
 
 export const newFormSchema = z.object({
@@ -18,7 +16,7 @@ export const newFormSchema = z.object({
   eightFeet: z.number() || z.enum(["-"]),
   associates: z.number() || z.enum(["-"]),
   totalMin: z.number() || z.enum(["-"]),
-  startTime: z.enum(["-"]) || customTimeFormat,
-  endTime: z.string() || z.enum(["-"]) || customTimeFormat,
-  breakTime: z.string() || z.enum(["-"]) || customTimeFormat,
+  startTime: customTimeFormat || z.enum(["-"]),
+  endTime: customTimeFormat || z.enum(["-"]),
+  breakTime: customTimeFormat || z.enum(["-"]),
 });

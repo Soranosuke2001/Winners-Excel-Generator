@@ -1,4 +1,7 @@
-export async function sendData(body: any) {
+import { newFormSchema } from "@/lib/newFormSchema";
+import { z } from "zod";
+
+export async function sendData(body: z.infer<typeof newFormSchema>) {
     console.log(body);
     
     const res = await fetch("http://127.0.0.1:5328/submit/data", {

@@ -20,19 +20,15 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 export default function page() {
-  async function submitHandler() {
-    const body = {
-      message: "Testing POST API",
-    };
-
-    const response = await sendData(body);
-
-    console.log(response);
-  }
-
-  function onSubmit(data: z.infer<typeof newFormSchema>) {
+  async function onSubmit(data: z.infer<typeof newFormSchema>) {
     // Send the data to the backend
-    console.log(data);
+    const response = await sendData(data);
+
+    if (!response.ok) {
+      throw new Error("There was an error sending the data to the backend")
+    }
+
+    console.log(response)
   }
 
   const form = useForm<z.infer<typeof newFormSchema>>({
@@ -47,14 +43,14 @@ export default function page() {
       eightFeet: 10,
       associates: 5,
       totalMin: 150,
-      startTime: "-",
+      startTime: "07:30",
       endTime: "12:00",
       breakTime: "00:10",
     },
   });
 
   return (
-    <div className="w-screen flex justify-center bg-white">
+    <div className="w-screen flex justify-center bg-black">
       <div className="border-solid border-gray-600 border-2 rounded-md w-1/2 m-4 p-4">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
@@ -75,7 +71,7 @@ export default function page() {
                       <FormDescription className="text-gray-200">
                         {eachField.description}
                       </FormDescription>
-                      <FormMessage className="text-red" />
+                      <FormMessage className="text-white" />
                     </FormItem>
                   )}
                 />
