@@ -1,0 +1,17 @@
+form submission page (new excel sheet)
+------------------------------------------------------
+1. Date range (week)
+2. which date to edit (mon, tues, wed...)
+3. Data fields
+  - Cartons
+  - Ratio (Selection)
+  - Skids
+  - Regular
+  - Big Box
+  - Loose
+  - 8 Feet
+  - Associates
+  - Total Min
+  - Start Time
+  - End Time
+  - Break Time
