@@ -3,6 +3,7 @@
 
 # Client files
 /client/node_modules
+/client/package-lock.json
 /client/.pnp
 /client/.pnp.js
 /client/.yarn/install-state.gz
