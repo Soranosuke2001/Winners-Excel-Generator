@@ -21,6 +21,32 @@ Backend:
 Data Models Folder:
   - holds the classes
 
+Excel Sheet Class:
+  - created date
+  - data_week
+  - year
+  - title
+
+Column Class:
+  - type (Homesense | Winners)
+  - date
+  - day
+  - cartons
+  - regular
+  - big_box
+  - loose
+  - eight_feet
+  - associates
+  - start_time
+  - end_time
+  - break_time
+  
+  - expected_hours_taken
+  - hours_taken
+  - variance
+
+
+
 Services Folder:
   - Business logic (calculations)
 
